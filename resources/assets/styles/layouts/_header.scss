@@ -5,3 +5,11 @@
 .banner .nav a {
   @extend .nav-link;
 }
+
+.banner {
+  background-color: map-get($map: $theme-colors, $key: header);
+}
+
+.navbar {
+  background-color: map-get($map: $theme-colors, $key: header);
+}

@@ -1,0 +1,17 @@
+.card {
+  cursor: pointer;
+  max-height: 450px;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+
+  &:hover {
+    border: 1px solid #42b883;
+    box-shadow: 0 4px 8px rgba(38, 38, 38, 0.2);
+    z-index: 500;
+  }
+
+  img {
+    height: 250px;
+    object-fit: cover;
+  }
+}

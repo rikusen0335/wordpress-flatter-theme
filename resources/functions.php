@@ -60,6 +60,17 @@ array_map(function ($file) use ($sage_error) {
     }
 }, ['helpers', 'setup', 'filters', 'admin']);
 
+
+
+/* Custom functions */
+function custom_excerpt_length( $length ) {
+    return 40;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+/* End of custom functioins */
+
+
+
 /**
  * Here's what's happening with these hooks:
  * 1. WordPress initially detects theme in themes/sage/resources
