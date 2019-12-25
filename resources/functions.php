@@ -64,7 +64,7 @@ array_map(function ($file) use ($sage_error) {
 
 /* Custom functions */
 function custom_excerpt_length( $length ) {
-    return 40;
+    return 50;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 /* End of custom functioins */
