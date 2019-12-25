@@ -1,4 +1,4 @@
-<header class="banner mb-5">
+<header class="banner">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light">
       @if (has_nav_menu('primary_navigation'))
