@@ -16,6 +16,53 @@
   }
 }
 
+.card-img-wrapper {
+  /* 参考 https://www.ameamelog.com/css-scale/ */
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transition: 0.3s;
+  }
+
+  & img {
+    height: 220px;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+
+  .card:hover &::before {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .card:hover & img {
+    transform: scale(1.05);
+  }
+}
+
+.card-img-top {
+  overflow: hidden;
+
+  img & {
+    height: 220px;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+
+  .card:hover & img {
+    transform: scale(1.05);
+  }
+}
+
 .card-link::after {
   position: absolute;
   top: 0;

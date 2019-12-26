@@ -1,10 +1,12 @@
-<div class="col-md-4 col-sm-6 col-xs-120 mb-3">
+<div class="col-md-4 col-sm-6 col-xs-120 mb-5">
   <article id="article-card" class="card" data-my-attribute="{{ get_permalink() }}" @php post_class() @endphp>
-    @if (has_post_thumbnail())
-      {{ the_post_thumbnail('full', ['class' => 'card-img-top']) }}
-    @else
-      <img src="https://via.placeholder.com/500" class="card-img-top" alt="No image">
-    @endif
+    <figure class="card-img-wrapper">
+      @if (has_post_thumbnail())
+        {{ the_post_thumbnail('full', ['class' => 'card-img-top']) }}
+      @else
+        <img src="https://via.placeholder.com/500" class="card-img-top" alt="No image">
+      @endif
+    </figure>
     <div class="card-body">
       <header>
         <div class="mb-2">
