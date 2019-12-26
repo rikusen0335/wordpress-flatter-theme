@@ -18,5 +18,5 @@
     </div>
   </div>
 
-  {!! get_the_posts_navigation() !!}
+  {{--!! get_the_posts_navigation() !!--}}
 @endsection
