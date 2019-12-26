@@ -1,5 +1,5 @@
 .entry-header {
-  height: 350px;
+  min-height: 350px;
   display: flex;
   align-items: center;
   background-color: #fff;
@@ -23,7 +23,7 @@
   }
 }
 
-.bg-inner {
+.entry-header-inner {
   position: absolute;
   width: 100%;
 }
