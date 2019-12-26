@@ -19,4 +19,6 @@
   </div>
 
   {{--!! get_the_posts_navigation() !!--}}
+
+  <div class="mb-5"></div>
 @endsection
