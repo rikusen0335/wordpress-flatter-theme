@@ -14,16 +14,8 @@
           <li class="nav-item active">
             <a class="nav-link" href="{{ home_url('/') }}">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Categories
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <!-- display categories with for -->
-              <a class="dropdown-item" href="#">Test</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Categories</a>
-            </div>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ home_url('/aboutme') }}">About me<span class="sr-only"></span></a>
           </li>
         </ul>
       </div>
