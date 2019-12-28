@@ -8,7 +8,7 @@ yarn-error.log
 /vendor
 resources/assets/config-local.json
 
-
+*.zip
 
 # Created by https://www.gitignore.io/api/node,composer,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=node,composer,visualstudiocode
