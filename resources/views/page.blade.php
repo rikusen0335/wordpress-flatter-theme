@@ -9,6 +9,7 @@
         <h1>About me</h1>
       </div>
     @endif
+    
     @include('partials.content-page')
   @endwhile
 @endsection
