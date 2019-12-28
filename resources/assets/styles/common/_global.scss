@@ -16,3 +16,7 @@ blockquote {
 table {
   @extend .table;
 }
+
+p {
+  @include rfs(20); // px
+}

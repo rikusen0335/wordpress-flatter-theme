@@ -1,6 +1,8 @@
 /** Import Bootstrap functions */
 @import "~bootstrap/scss/functions";
 
+$enable-responsive-font-sizes: true;
+
 $theme-colors: (
   primary: #00c58e,
   primary-light: #42b883,
