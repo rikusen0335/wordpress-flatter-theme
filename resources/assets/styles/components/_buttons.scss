@@ -1,0 +1,37 @@
+.wp-block-button {
+  .wp-block-button__link {
+    border-radius: 20px;
+    font-size: 16px;
+    padding: 8px 20px;
+  }
+
+  /* a[href*="twitter.com"] {
+    background-color: map-get($brand-colors, twitter);
+  }
+
+  a[href*="twitch.tv"] {
+    background-color: map-get($brand-colors, twitch);
+  }
+
+  a[href*="youtube.com"] {
+    background-color: map-get($brand-colors, youtube);
+  }
+
+  a[href*="discord"] {
+    background-color: map-get($brand-colors, discord);
+  } */
+
+  @each $name, $color in $brand-colors {
+    &.btn-#{$name} {
+      a {
+        background-color: $color;
+        text-decoration: none;
+        transition: 0.15s;
+      }
+
+      a:hover {
+        background-color: darken($color, 10%);
+      }
+    }
+  }
+}

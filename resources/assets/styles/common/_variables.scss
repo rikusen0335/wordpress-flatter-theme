@@ -7,6 +7,13 @@ $theme-colors: (
   header: #eee
 );
 
+$brand-colors: (
+  "twitter": #1da1f2,
+  "twitch": #6441a4,
+  "discord": #7289da,
+  "youtube": rgb(255, 0, 0)
+);
+
 $text-black: #333;
 $text-white: #eee;
 
@@ -18,4 +25,8 @@ $navbar-light-toggler-icon-bg: none;
 
 @function colors($key) {
   @return map-get($theme-colors, $key);
+}
+
+@function brand($key) {
+  @return map-get($brand-colors, $key);
 }

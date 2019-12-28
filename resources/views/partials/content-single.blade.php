@@ -7,7 +7,7 @@
     </div>
   </div>
 </header>
-<div class="container">
+<div class="wrap container">
   <article @php post_class() @endphp>
     <nav aria-label="breadcrumb">
       <!-- folder icon? -->
