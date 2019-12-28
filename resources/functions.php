@@ -68,6 +68,12 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
+function custom_excerpt_more( $more ) {
+    return " ...";
+}
+add_filter('excerpt_more', 'custom_excerpt_more' );
+
+
 function get_lowest_category ($sbjcat = '', $taxonomy = 'category') {
     /* 参考 https://www.kimagure-weblog.net/wordpress/category-name001/ */
 
@@ -83,9 +89,10 @@ function get_lowest_category ($sbjcat = '', $taxonomy = 'category') {
     return $current_cat -> name;
 }
 
+
 function get_category_structure () {
     /* 参考 https://ja.wordpress.org/support/topic/%E8%A6%AA%E3%80%81%E5%AD%90%E3%80%81%E5%AD%AB%E3%81%AE%E9%A0%86%E3%81%A7%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%97%E3%81%9F%E3%81%84/ */
-    
+
     $post_cats = get_the_category();
     if($post_cats){
         $bottom_cat = $post_cats[0];

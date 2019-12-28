@@ -24,7 +24,7 @@
       </div>
 
       <footer>
-        <div class="">
+        <div class="text-center">
           @if (has_tag())
             @foreach (get_the_tags() as $tag)
               <!-- tag icon? -->
@@ -32,10 +32,10 @@
             @endforeach
           @endif
         </div>
-        <div class="">
+        <div class="text-center">
           @include('partials/date-meta')
         </div>
-        {{-- 投稿者名は書かなくても良さそう？ @include('partials/end-meta') --}}
+        {{-- 投稿者名は書かなくても良さそう？ @include('partials/author-meta') --}}
       </footer>
     </div>
   </article>

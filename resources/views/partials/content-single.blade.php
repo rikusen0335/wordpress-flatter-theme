@@ -3,13 +3,14 @@
     <div class="container position-relative">
       <h1 class="display-5 text-white">{{ get_the_title() }}</h1>
       <span class="text-light">@include('partials/date-meta')</span>
-      <span>@include('partials/end-meta')</span>
+      {{-- <span>@include('partials/author-meta')</span> --}}
     </div>
   </div>
 </header>
 <div class="container">
   <article @php post_class() @endphp>
     <nav aria-label="breadcrumb">
+      <!-- folder icon? -->
       <ol class="breadcrumb">
         @foreach (get_category_structure()[0] as $anc)
           <li class="breadcrumb-item">{{ get_category($anc) -> name }}</li>
