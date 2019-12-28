@@ -67,6 +67,50 @@ function custom_excerpt_length( $length ) {
     return 50;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function get_lowest_category ($sbjcat = '', $taxonomy = 'category') {
+    $terms = get_the_terms($sbjcat, $taxonomy);
+
+    if (empty($terms)) return false;
+
+    $candidate = $terms;
+    $cnt = count($terms);
+
+    if ($cnt > 1) {
+        foreach ($terms as $key => $term) {
+            foreach ($terms as $term2) {
+                if (term_is_ancestor_of($term->term_id, $term2->term_id, $taxonomy)) {
+                    unset($candidate[$key]);
+                    break;
+                }
+            }
+        }
+    }
+
+    return $candidate;
+}
+
+function get_category_structure () {
+    /* 参考 https://ja.wordpress.org/support/topic/%E8%A6%AA%E3%80%81%E5%AD%90%E3%80%81%E5%AD%AB%E3%81%AE%E9%A0%86%E3%81%A7%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E3%82%92%E8%A1%A8%E7%A4%BA%E3%81%97%E3%81%9F%E3%81%84/ */
+    $post_cats = get_the_category();
+    if($post_cats){
+        $bottom_cat = $post_cats[0];
+        $bottom_anc = get_ancestors($bottom_cat->term_id, 'category');
+        foreach ($post_cats as $index => $cat) {
+            if ($index > 0) {
+            $anc = get_ancestors($cat->term_id, 'category');
+                if(count($anc) > count($bottom_anc)){
+                    $bottom_cat = $cat;
+                    $bottom_anc = $anc;
+                }
+            }
+        }
+
+        $bottom_anc = array_reverse($bottom_anc);
+    }
+    
+    return [$bottom_anc, $bottom_cat];
+}
 /* End of custom functioins */
 
 

@@ -3,6 +3,7 @@
 
 $theme-colors: (
   primary: #00c58e,
+  primary-light: #42b883,
   header: #eee
 );
 
@@ -11,6 +12,10 @@ $text-white: #eee;
 
 $header-height: 200px;
 
-/** Bootstrap navbar fix (https://git.io/fADqW) */
+/* Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
+
+@function colors($key) {
+  @return map-get($theme-colors, $key);
+}

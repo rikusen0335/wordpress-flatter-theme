@@ -6,10 +6,25 @@
       @else
         <img src="https://via.placeholder.com/500" class="card-img-top" alt="No image">
       @endif
+
+      @if (has_category())
+        <p>
+          <!-- folder icon? -->
+          {{ get_lowest_category() }}
+        </p>
+      @endif
     </figure>
     <div class="card-body">
       <header>
-        <div class="mb-2">
+        <h5 class="card-title">{!! get_the_title() !!}</h5>
+      </header>
+
+      <div class="card-text">
+        @php the_excerpt() @endphp
+      </div>
+
+      <footer>
+        <div class="">
           @if (has_tag())
             @foreach (get_the_tags() as $tag)
               <!-- tag icon? -->
@@ -17,22 +32,10 @@
             @endforeach
           @endif
         </div>
-        <h5 class="card-title mb-1">{!! get_the_title() !!}</h5>
-        <div class="mb-3">
-
-          <!-- category -->
+        <div class="">
+          @include('partials/date-meta')
         </div>
-
-        <div class="mb-3">
-          @include('partials/entry-meta')
-        </div>
-
-      </header>
-      <div class="card-text">
-        @php the_excerpt() @endphp
-      </div>
-      <footer>
-        @include('partials/end-meta')
+        {{-- 投稿者名は書かなくても良さそう？ @include('partials/end-meta') --}}
       </footer>
     </div>
   </article>
