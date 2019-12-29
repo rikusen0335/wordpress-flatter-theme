@@ -5,22 +5,6 @@
     padding: 8px 20px;
   }
 
-  /* a[href*="twitter.com"] {
-    background-color: map-get($brand-colors, twitter);
-  }
-
-  a[href*="twitch.tv"] {
-    background-color: map-get($brand-colors, twitch);
-  }
-
-  a[href*="youtube.com"] {
-    background-color: map-get($brand-colors, youtube);
-  }
-
-  a[href*="discord"] {
-    background-color: map-get($brand-colors, discord);
-  } */
-
   @each $name, $color in $brand-colors {
     &.btn-#{$name} {
       a {
@@ -30,7 +14,7 @@
       }
 
       a:hover {
-        background-color: darken($color, 7%);
+        background-color: darken($color, 8%);
       }
     }
   }
